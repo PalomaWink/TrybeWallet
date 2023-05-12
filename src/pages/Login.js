@@ -74,9 +74,6 @@ class Login extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({
-  user: state.email,
-});
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
@@ -85,4 +82,4 @@ Login.propTypes = {
   }).isRequired,
 };
 
-export default connect(mapStateToProps)(Login);
+export default connect()(Login);
