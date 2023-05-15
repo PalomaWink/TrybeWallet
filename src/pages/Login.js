@@ -16,7 +16,6 @@ class Login extends Component {
       [name]: value,
     }, () => {
       const { email, password } = this.state;
-      console.log(password);
       const emailValidation = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+$/i;
       const number = 6;
       this.setState({

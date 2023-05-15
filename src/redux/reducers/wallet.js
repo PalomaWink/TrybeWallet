@@ -8,6 +8,15 @@ const INICIAL_STATE_WALLET = {
 
 const walletReducer = (state = INICIAL_STATE_WALLET, action) => {
   switch (action.type) {
+  case 'REQUEST_ISS_LOCATION':
+    return {
+      ...state,
+    };
+  case 'RECEIVE_ISS_LOCATION':
+    return {
+      ...state,
+      currencies: action.payload,
+    };
   default:
     return state;
   }

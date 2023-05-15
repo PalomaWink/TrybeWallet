@@ -10,20 +10,13 @@ export const AddRegister = (email) => ({
   email,
 });
 
-/* export const requestIssLocation = () => ({
-  type: REQUEST_ISS_LOCATION,
+export const receiveIssLocationSuccess = (currencies) => ({
+  type: RECEIVE_ISS_LOCATION,
+  payload: currencies,
 });
 
-export const receiveIssLocationSuccess = (value) => ({
-  type: RECEIVE_ISS_LOCATION,
-  payload: value,
-}); */
-
-export const actionFetchAPI = () => {
-  const getCurrences = async (dispatch) => {
-    dispatch(requestIssLocation());
-    await getFetchAPI();
-    dispatch(receiveIssLocationSuccess());
-  };
-  getCurrences();
+export const actionFetchAPI = () => async (dispatch) => {
+  const result = await getFetchAPI();
+  const currenci = Object.keys(result).filter((cur) => cur !== 'USDT');
+  dispatch(receiveIssLocationSuccess(currenci));
 };
