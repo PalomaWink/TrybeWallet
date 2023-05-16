@@ -2,12 +2,17 @@
 import getFetchAPI from '../../services/fetchAPI';
 
 export const ADD_REGISTER = 'LOGIN';
-export const REQUEST_ISS_LOCATION = 'REQUEST_ISS_LOCATION';
+export const OTHERS_INFORMATIONS = 'OTHERS_INFORMATIONS';
 export const RECEIVE_ISS_LOCATION = 'RECEIVE_ISS_LOCATION';
 
 export const AddRegister = (email) => ({
   type: ADD_REGISTER,
   email,
+});
+
+export const othersInformations = (infos) => ({
+  type: OTHERS_INFORMATIONS,
+  payload: infos,
 });
 
 export const receiveIssLocationSuccess = (currencies) => ({

@@ -8,9 +8,10 @@ const INICIAL_STATE_WALLET = {
 
 const walletReducer = (state = INICIAL_STATE_WALLET, action) => {
   switch (action.type) {
-  case 'REQUEST_ISS_LOCATION':
+  case 'OTHERS_INFORMATIONS':
     return {
       ...state,
+      expenses: [...state.expenses, action.payload],
     };
   case 'RECEIVE_ISS_LOCATION':
     return {

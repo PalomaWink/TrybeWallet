@@ -4,8 +4,21 @@ import PropTypes from 'prop-types';
 
 class Header extends Component {
   state = {
-    despesa: '0',
+    despesa: 0,
     cambio: 'BRL',
+  };
+
+  componentDidMount() {
+    this.handleChange();
+  }
+
+  handleChange = () => {
+    const { expenses } = this.props;
+    console.log(Object.values(expenses));
+    const total = expenses;
+    this.setState({
+      despesa: total,
+    });
   };
 
   render() {
@@ -30,11 +43,14 @@ class Header extends Component {
 }
 
 Header.propTypes = {
+  /* dispatch: PropTypes.func.isRequired, */
   email: PropTypes.string.isRequired,
+  expenses: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 const mapStateToProps = (globalState) => ({
   ...globalState.user,
+  expenses: globalState.wallet,
 });
 
 export default connect(mapStateToProps)(Header);
