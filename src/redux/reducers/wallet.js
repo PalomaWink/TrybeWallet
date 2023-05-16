@@ -1,4 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
+import { OTHERS_INFORMATIONS, RECEIVE_ISS_LOCATION } from '../actions';
+
 const INICIAL_STATE_WALLET = {
   currencies: [], // array de string
   expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
@@ -8,12 +10,12 @@ const INICIAL_STATE_WALLET = {
 
 const walletReducer = (state = INICIAL_STATE_WALLET, action) => {
   switch (action.type) {
-  case 'OTHERS_INFORMATIONS':
+  case OTHERS_INFORMATIONS:
     return {
       ...state,
       expenses: [...state.expenses, action.payload],
     };
-  case 'RECEIVE_ISS_LOCATION':
+  case RECEIVE_ISS_LOCATION:
     return {
       ...state,
       currencies: action.payload,
