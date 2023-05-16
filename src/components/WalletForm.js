@@ -30,10 +30,7 @@ class WalletForm extends Component {
     const { dispatch } = this.props;
     const { id } = this.state;
     const result = await getFetchAPI();
-    /* const expenses = {
-      ...this.state,
-      exchangeRates: result,
-    }; */
+
     dispatch(othersInformations({ ...this.state, exchangeRates: result }));
     this.setState({
       id: id + 1,
