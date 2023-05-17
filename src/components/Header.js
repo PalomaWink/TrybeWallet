@@ -28,7 +28,6 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  /* dispatch: PropTypes.func.isRequired, */
   email: PropTypes.string.isRequired,
   expenses: PropTypes.objectOf(PropTypes.string).isRequired,
 };
