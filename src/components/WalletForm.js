@@ -34,7 +34,7 @@ class WalletForm extends Component {
     dispatch(othersInformations({ ...this.state, exchangeRates: result }));
     this.setState({
       id: id + 1,
-      value: '',
+      value: 0,
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
@@ -50,7 +50,7 @@ class WalletForm extends Component {
         <label htmlFor="inputValue">
           Valor:
           <input
-            type="text"
+            type="number"
             id="inputValue"
             data-testid="value-input"
             name="value"
