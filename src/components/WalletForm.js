@@ -34,7 +34,7 @@ class WalletForm extends Component {
     dispatch(othersInformations({ ...this.state, exchangeRates: result }));
     this.setState({
       id: id + 1,
-      value: 0,
+      value: '',
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
