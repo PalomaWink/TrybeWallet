@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { OTHERS_INFORMATIONS, RECEIVE_ISS_LOCATION } from '../actions';
+import { OTHERS_INFORMATIONS, RECEIVE_ISS_LOCATION, DELETE_INFO } from '../actions';
 
 const INICIAL_STATE_WALLET = {
   currencies: [], // array de string
@@ -20,6 +20,13 @@ const walletReducer = (state = INICIAL_STATE_WALLET, action) => {
       ...state,
       currencies: action.payload,
     };
+  case DELETE_INFO: {
+    const updatedInfo = state.expenses.filter((item) => item.id !== action.payload);
+    return {
+      ...state,
+      expenses: updatedInfo,
+    };
+  }
   default:
     return state;
   }

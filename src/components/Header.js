@@ -14,7 +14,6 @@ class Header extends Component {
         </p>
         <div>
           <p data-testid="total-field">
-            Despesa Total: R$
             { expenses.length ? expenses
               .reduce((acc, expense) => acc + Number(expense.value)
                 * Number(expense.exchangeRates[expense.currency].ask), 0).toFixed(2)

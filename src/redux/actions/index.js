@@ -4,6 +4,7 @@ import getFetchAPI from '../../services/fetchAPI';
 export const ADD_REGISTER = 'LOGIN';
 export const OTHERS_INFORMATIONS = 'OTHERS_INFORMATIONS';
 export const RECEIVE_ISS_LOCATION = 'RECEIVE_ISS_LOCATION';
+export const DELETE_INFO = 'DELETE_INFO';
 
 export const AddRegister = (email) => ({
   type: ADD_REGISTER,
@@ -13,6 +14,11 @@ export const AddRegister = (email) => ({
 export const othersInformations = (infos) => ({
   type: OTHERS_INFORMATIONS,
   payload: infos,
+});
+
+export const deleteInfo = (infoId) => ({
+  type: 'DELETE_INFO',
+  payload: infoId,
 });
 
 export const receiveIssLocationSuccess = (currencies) => ({
