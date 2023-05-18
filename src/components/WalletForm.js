@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { actionFetchAPI, othersInformations, conclusionEdit } from '../redux/actions';
 import getFetchAPI from '../services/fetchAPI';
 
+const alimentacao = 'Alimentação';
+
 class WalletForm extends Component {
   state = {
     id: 0,
@@ -11,7 +13,7 @@ class WalletForm extends Component {
     description: '',
     currency: 'USD',
     method: 'Dinheiro',
-    tag: 'Alimentação',
+    tag: alimentacao,
   };
 
   componentDidMount() {
@@ -29,11 +31,6 @@ class WalletForm extends Component {
         ...expenses[index],
       });
     }
-    /* if (!editor && prevProps.editor) {
-      this.setState({
-        ...prevState,
-      });
-    } */
   }
 
   handleChange = ({ target }) => {
@@ -55,7 +52,7 @@ class WalletForm extends Component {
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'Alimentação',
+      tag: alimentacao,
     });
   };
 
@@ -67,9 +64,9 @@ class WalletForm extends Component {
     this.setState({
       value: '',
       description: '',
-      currency: '',
-      method: '',
-      tag: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: alimentacao,
     });
   };
 

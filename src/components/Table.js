@@ -76,7 +76,7 @@ Table.propTypes = {
 };
 
 const mapStateToProps = (globalState) => ({
-  expenses: globalState.wallet.expenses,
+  ...globalState.wallet,
 });
 
 export default connect(mapStateToProps)(Table);
